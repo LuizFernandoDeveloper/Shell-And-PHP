@@ -56,5 +56,7 @@ $diretorio -> close();
 
 
 ');
-eval(base64_decode($encode))
+
+echo $encode;
+//eval(base64_decode($encode))
 ?>
